@@ -1,7 +1,5 @@
 package retrofitDummy
 
-class ApiClient {
-    companion object {
-        fun getData(): List<Person> = listOf(Person("Riad Safowan"), Person("Redwan aurko"))
-    }
+object ApiClient {
+    fun getData(): List<Person> = listOf(Person("Riad Safowan"), Person("Redwan aurko"))
 }

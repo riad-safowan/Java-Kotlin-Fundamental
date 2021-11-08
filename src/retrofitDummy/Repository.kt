@@ -1,12 +1,9 @@
 package retrofitDummy
 
-class Repository {
-    companion object {
-        fun getData() =
-            ApiHelper.apiHelper { ApiClient.getData() }
-
-    }
+object Repository {
+    fun getData() = ApiHelper.apiHelper { ApiClient.getData() }
 }
+
 
 fun main() {
     val data = Repository.getData()
