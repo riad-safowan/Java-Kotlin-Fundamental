@@ -1,4 +1,4 @@
-package com.riadsafowan.test
+package com.riadsafowan.test.function
 
 import java.util.*
 import kotlin.concurrent.thread
