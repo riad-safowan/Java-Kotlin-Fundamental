@@ -1,4 +1,4 @@
-package com.riadsafowan.test.inheritance
+package inheritance
 
 sealed class Response<T> {
     class Success<T>(val value: T) : Response<T>()

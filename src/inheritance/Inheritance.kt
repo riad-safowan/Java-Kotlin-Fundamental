@@ -1,4 +1,4 @@
-package com.riadsafowan.test.inheritance
+package inheritance
 
 open class Animal {
     companion object{

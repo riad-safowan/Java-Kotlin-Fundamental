@@ -1,4 +1,4 @@
-package com.riadsafowan.test.retrofitDummy
+package retrofitDummy
 
 class ApiHelper {
     companion object {

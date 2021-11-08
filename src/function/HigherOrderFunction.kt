@@ -1,6 +1,5 @@
-package com.riadsafowan.test.function
+package function
 
-import java.util.*
 import kotlin.concurrent.thread
 
 var fn: ((text: String) -> Unit)? = null

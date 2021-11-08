@@ -1,4 +1,4 @@
-package com.riadsafowan.test.retrofitDummy
+package retrofitDummy
 
 sealed class Response<out T> {
     data class Success<T>(val value: T) : Response<T>()
