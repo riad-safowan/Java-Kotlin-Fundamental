@@ -1,5 +1,11 @@
 package retrofitDummy
 
+import kotlinx.coroutines.runBlocking
+
 object ApiClient {
-    fun getData(): List<Person> = listOf(Person("Riad Safowan"), Person("Redwan aurko"))
+    suspend fun getData(): List<Person> {
+        println("ApiClient: "+Thread.currentThread().name)
+       return listOf(Person("Riad Safowan"), Person("Redwan aurko"))
+    }
 }
+

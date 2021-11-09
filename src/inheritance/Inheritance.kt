@@ -1,14 +1,13 @@
 package inheritance
 
 open class Animal {
-    companion object{
+    companion object {
         val isLive: Boolean = true
-        fun sleep(){
-
+        fun sleep() {
         }
     }
-    open fun sayName() {
 
+    open fun sayName() {
     }
 }
 
@@ -18,7 +17,6 @@ interface Caller {
 }
 
 class Dog : Animal(), Caller {
-
     override fun sayName() {
         super<Caller>.sayName()
         super<Animal>.sayName()
@@ -31,7 +29,7 @@ class Dog : Animal(), Caller {
     }
 }
 
-class Person{
+class Person {
     init {
         Animal.sleep()
     }

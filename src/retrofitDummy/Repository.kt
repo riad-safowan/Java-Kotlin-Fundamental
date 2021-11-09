@@ -1,7 +1,15 @@
 package retrofitDummy
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.runBlocking
+
 object Repository {
-    fun getData() = ApiHelper.apiHelper { ApiClient.getData() }
+    fun getData() = ApiHelper.apiHelper {
+        runBlocking(Dispatchers.IO) {
+            println("Repository: "+Thread.currentThread().name)
+            ApiClient.getData()
+        }
+    }
 }
 
 
