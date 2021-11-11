@@ -43,13 +43,13 @@ fun main() {
     generic.function(dog)
 
     val generic2 = Generic<Mammal>()
-    generic2.function(animal as Mammal)
+//    generic2.function(animal)
     generic2.function(mammal)
     generic2.function(dog)
 
     val generic3 = Generic<Dog>()
-    generic3.function(animal as Dog) //cast is mandatory, smart cast is not allowed
-    generic3.function(mammal as Dog)
+//    generic3.function(animal)
+//    generic3.function(mammal)
     generic3.function(dog)
 
     //covariant can take all the subclasses
@@ -64,5 +64,28 @@ fun main() {
     contra(Contravariant<Dog>())
     contra(Contravariant<Any>())
 
+    //
+    val con = Covariant<Mammal>()
+    println(con.asdf(Contravariant()))
+    println(con)
 
+
+    // type checker inside Generics class
+    Generics<String>().checkType("foo")
+    Generics<String>().checkType(1)
+
+}
+
+class Generics<T>(val klass: Class<T>) {
+    companion object {
+        inline operator fun <reified T> invoke() = Generics(T::class.java)
+    }
+
+    fun checkType(t: Any) {
+        when {
+            klass.isAssignableFrom(t.javaClass) -> println("Correct type")
+            else -> println("Wrong type")
+        }
+
+    }
 }
