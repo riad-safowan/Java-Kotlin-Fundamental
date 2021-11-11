@@ -52,20 +52,17 @@ fun main() {
     generic3.function(mammal as Dog)
     generic3.function(dog)
 
-    //covariant can take child
-    val covariant1 = Covariant<Animal>()
-    val covariant2 = Covariant<Mammal>()
-    val covariant3 = Covariant<Dog>()
-    co(covariant1)
-    co(covariant2)
-    co(covariant3)
+    //covariant can take all the subclasses
+    co(Covariant<Animal>())
+    co(Covariant<Mammal>())
+    co(Covariant<Dog>())
+    co(Covariant<Nothing>())
 
-    //contravariant can take parent
-    val contravariant1 = Contravariant<Animal>()
-    val contravariant2 = Contravariant<Mammal>()
-    val contravariant3 = Contravariant<Dog>()
-    contra(contravariant1)
-    contra(contravariant2)
-    contra(contravariant3)
+    //contravariant can take all the superclasses
+    contra(Contravariant<Animal>())
+    contra(Contravariant<Mammal>())
+    contra(Contravariant<Dog>())
+    contra(Contravariant<Any>())
+
 
 }
