@@ -89,3 +89,5 @@ class Generics<T>(val klass: Class<T>) {
 
     }
 }
+
+// https://blog.mindorks.com/what-are-reified-types-in-kotlin
